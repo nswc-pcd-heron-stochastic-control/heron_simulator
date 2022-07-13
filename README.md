@@ -2,15 +2,16 @@
 
 ## Installation
 
-Use the instructions for ROS Kinetic and Gazebo 7 at the following link:   
-https://uuvsimulator.github.io/installation/
+Use the instructions for ROS Noetic and Gazebo 11 at the following link:
+http://wiki.ros.org/noetic/Installation
+https://classic.gazebosim.org/tutorials?tut=install_ubuntu
 
 
 Then in the src folder of your catkin workspace, run the commands:  
   ```
 git clone https://github.com/heron/heron_simulator  
 cd ..
-rosdep install --from-paths src --ignore-src --rosdistro=kinetic -yr
+rosdep install --from-paths src --ignore-src --rosdistro=noetic -yr
   ```
 
 Also ensure you have the following packages in your src folder: heron, heron_controller, heron_desktop, and imu_tools. Build your workspace and you're ready to run the simulation!

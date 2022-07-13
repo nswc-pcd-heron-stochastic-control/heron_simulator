@@ -30,13 +30,13 @@ jobs:
       - uses: 'ros-industrial/industrial_ci@master'
         env: ${{matrix.env}}
 
-  heron_simulator_kinetic_ci:
-    name: Kinetic
+  heron_simulator_noetic_ci:
+    name: Noetic
     strategy:
       matrix:
         env:
-          - {ROS_DISTRO: kinetic, ROS_REPO: main}
-          - {ROS_DISTRO: kinetic, ROS_REPO: testing}
+          - {ROS_DISTRO: Noetic, ROS_REPO: main}
+          - {ROS_DISTRO: Noetic, ROS_REPO: testing}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
