@@ -6,6 +6,6 @@
     <xacro:sydneyregatta />
     <!--Waves-->
     <xacro:include filename="$(find wave_gazebo)/world_models/ocean_waves/model.xacro"/>
-    <xacro:ocean_waves gain="0.1" scale="1.5"/>
+    <xacro:ocean_waves gain="0.05" scale="1.5"/>
   </world>
 </sdf>
