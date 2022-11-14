@@ -22,7 +22,7 @@
 # NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
 
-from heron_msgs.msg import FloatStamped
+from std_msgs.msg import Float32
 from heron_msgs.msg import Drive
 import rospy
 
@@ -30,8 +30,7 @@ def cmd_drive_callback(drive):
     global p_left
     global p_right
 
-    send = FloatStamped()
-    send.header.stamp = rospy.Time.now()
+    send = Float32()
 
     send.data = drive.left
     p_left.publish(send)
@@ -48,8 +47,8 @@ def translate():
     if namespace == "":
         namespace = "heron"
 
-    p_left = rospy.Publisher("/" + namespace + "/thrusters/1/input", FloatStamped, queue_size=1)
-    p_right = rospy.Publisher("/" + namespace + "/thrusters/0/input", FloatStamped, queue_size=1)
+    p_left = rospy.Publisher("/" + namespace + "/thrusters/1/input", Float32, queue_size=1)
+    p_right = rospy.Publisher("/" + namespace + "/thrusters/0/input", Float32, queue_size=1)
 
     cmd_drive_sub = rospy.Subscriber("cmd_drive", Drive, cmd_drive_callback)
 
