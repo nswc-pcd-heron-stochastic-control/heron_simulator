@@ -2,6 +2,14 @@
 <!-- World containing sydneyregatta model and some course challenges -->
 <sdf version="1.6" xmlns:xacro="http://ros.org/wiki/xacro">
   <world name="vrx_wildlife">
+
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose>-10 -10 10 0 0.52 0.785</pose>
+        <view_controller>orbit</view_controller>
+      </camera>
+    </gui>
+
     <xacro:include filename="$(find vrx_gazebo)/worlds/sydneyregatta.xacro" />
     <xacro:sydneyregatta />
     <!--Waves-->
